@@ -18,7 +18,6 @@ autoinstall:
         - neofetch
         - docker.io
         - docker-compose
-        - google-chrome-stable
     snaps:
         - name: code
           channel: latest/stable
