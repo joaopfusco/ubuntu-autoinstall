@@ -19,10 +19,10 @@ autoinstall:
     snaps:
         - name: code
           channel: latest/stable
-          classic: false
+          classic: true
         - name: postman
           channel: latest/stable
-          classic: false
+          classic: true
         - name: discord
           channel: latest/stable
           classic: false
@@ -30,7 +30,7 @@ autoinstall:
         - curtin in-target -- apt-get autoremove -y
         - |
           curtin in-target -- wget -q https://raw.githubusercontent.com/joaopfusco/ubuntu-autoinstall/refs/heads/main/dev.sh
-          curtin in-target -- sh dev.sh
+          curtin in-target -- bash dev.sh
           curtin in-target -- rm dev.sh
     codecs:
         install: true
