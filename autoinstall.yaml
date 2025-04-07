@@ -28,6 +28,12 @@ autoinstall:
         - name: discord
           channel: latest/stable
           classic: false
+    late-commands:
+        - curtin in-target -- apt-get autoremove -y
+        - |
+          curtin in-target -- wget -q https://raw.githubusercontent.com/joaopfusco/ubuntu-autoinstall/refs/heads/main/dev.sh
+          curtin in-target -- sh dev.sh
+          curtin in-target -- rm dev.sh
     codecs:
         install: true
     drivers:
