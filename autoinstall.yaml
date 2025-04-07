@@ -16,8 +16,6 @@ autoinstall:
         - wget
         - curl
         - neofetch
-        - docker.io
-        - docker-compose
     snaps:
         - name: code
           channel: latest/stable
