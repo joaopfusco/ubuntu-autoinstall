@@ -1,0 +1,37 @@
+#cloud-config
+autoinstall:
+    version: 1
+    identity:
+        realname: 'Joao Pedro Fusco'
+        hostname: jpfusco-desktop
+        username: joaop
+        password: '$y$j9T$uhkxlm8nUQaNu.6rl4k2d.$DIldpYy96OHg8lFjfXfc671BZcGWkPOmaDONGAhGSg3'
+    locale: "en_US.UTF-8"
+    keyboard:
+        layout: us
+        variant: "intl"
+    timezone: "America/Sao_Paulo"   
+    packages:
+        - git
+        - wget
+        - curl
+        - neofetch
+        - docker.io
+        - docker-compose
+        - google-chrome-stable
+    snaps:
+        - name: code
+          channel: latest/stable
+          classic: false
+        - name: postman
+          channel: latest/stable
+          classic: false
+        - name: discord
+          channel: latest/stable
+          classic: false
+    codecs:
+        install: true
+    drivers:
+        install: true
+    updates: all
+    shutdown: reboot
