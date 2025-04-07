@@ -18,7 +18,6 @@ autoinstall:
         - neofetch
         - docker.io
         - docker-compose
-        - google-chrome-stable
     snaps:
         - name: code
           channel: latest/stable
@@ -29,6 +28,11 @@ autoinstall:
         - name: discord
           channel: latest/stable
           classic: false
+    late-commands:
+        - curtin in-target -- apt-key adv --fetch-keys https://dl.google.com/linux/linux_signing_key.pub
+        - curtin in-target -- sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+        - curtin in-target -- apt-get update
+        - curtin in-target -- apt-get install -y google-chrome-stable
     codecs:
         install: true
     drivers:
